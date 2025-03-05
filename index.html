@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truc Lan Motel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Simple inline script to handle language toggling -->
+  <script>
+    function toggleLanguage() {
+      // We get the current language from the HTML 'lang' attribute:
+      const htmlEl = document.documentElement;
+      const currentLang = htmlEl.getAttribute('lang');
+
+      // Toggle between 'en' and 'vi'
+      const newLang = (currentLang === 'en') ? 'vi' : 'en';
+      htmlEl.setAttribute('lang', newLang);
+
+      // Show or hide elements based on their data-lang attribute
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        element.style.display = (element.getAttribute('data-lang') === newLang)
+          ? 'block'
+          : 'none';
+      });
+    }
+
+    // On page load, ensure the correct language is displayed
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentLang = document.documentElement.getAttribute('lang');
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        element.style.display = (element.getAttribute('data-lang') === currentLang)
+          ? 'block'
+          : 'none';
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <!-- Motel Name -->
+      <h1 class="logo">
+        <!-- English version -->
+        <span data-lang="en">Truc Lan</span>
+        <!-- Vietnamese version -->
+        <span data-lang="vi">Trúc Lan</span>
+      </h1>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">
+            <span data-lang="en">About Us</span>
+            <span data-lang="vi">Giới Thiệu</span>
+          </a></li>
+          <li><a href="#feedback">
+            <span data-lang="en">Feedback</span>
+            <span data-lang="vi">Phản Hồi</span>
+          </a></li>
+          <li><a href="#contact">
+            <span data-lang="en">Contact</span>
+            <span data-lang="vi">Liên Hệ</span>
+          </a></li>
+        </ul>
+      </nav>
+
+      <!-- Language Toggle Button on top-right -->
+      <button class="lang-toggle" onclick="toggleLanguage()">
+        <!-- We'll just show an icon or text; 
+             it will toggle the site language automatically. -->
+        <span data-lang="en">Vi / En</span>
+        <span data-lang="vi">En / Vi</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>
+        <span data-lang="en">Welcome to Truc Lan Motel</span>
+        <span data-lang="vi">Chào Mừng Đến Với Nhà Nghỉ Trúc Lan</span>
+      </h2>
+      <p>
+        <span data-lang="en">Experience comfort and hospitality at its finest.</span>
+        <span data-lang="vi">Trải nghiệm sự thoải mái và hiếu khách tuyệt vời nhất.</span>
+      </p>
+      <a href="#feedback" class="button">
+        <span data-lang="en">Leave Feedback</span>
+        <span data-lang="vi">Để Lại Phản Hồi</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <h2>
+      <span data-lang="en">About Us</span>
+      <span data-lang="vi">Giới Thiệu</span>
+    </h2>
+    <p>
+      <span data-lang="en">
+        Truc Lan Motel is your home away from home. We pride ourselves on warm hospitality
+        and a cozy stay for all of our guests.
+      </span>
+      <span data-lang="vi">
+        Nhà Nghỉ Trúc Lan là ngôi nhà thứ hai của bạn. Chúng tôi tự hào về lòng hiếu khách
+        và một không gian ấm cúng cho tất cả khách hàng.
+      </span>
+    </p>
+    <p>
+      <span data-lang="en">
+        Conveniently located with easy access to local attractions, we strive to make your visit memorable.
+      </span>
+      <span data-lang="vi">
+        Nằm ở vị trí thuận tiện, dễ dàng tiếp cận, chúng tôi nỗ lực
+        để chuyến đi của bạn thật khó quên.
+      </span>
+    </p>
+  </section>
+
+  <!-- Feedback Section with Google Form -->
+  <section id="feedback" class="feedback-section">
+    <h2>
+      <span data-lang="en">Guest Feedback</span>
+      <span data-lang="vi">Phản Hồi Của Khách Hàng</span>
+    </h2>
+    <p>
+      <span data-lang="en">
+        We value your feedback. Please fill out the form below to let us know about your stay!
+      </span>
+      <span data-lang="vi">
+        Chúng tôi trân trọng ý kiến đóng góp của bạn. Hãy điền biểu mẫu dưới đây để chia sẻ về trải nghiệm của mình!
+      </span>
+    </p>
+    
+    <!-- Embed your Google Form here by replacing the 'src' with your actual form link -->
+    <div class="form-container">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSekIONPc9SlmdfMIyQCDyx9XSMaP0BqQbDJuI90ZQb5y0ZLjg/viewform?usp=dialog"
+        width="640"
+        height="800"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>
+      <span data-lang="en">Contact Us</span>
+      <span data-lang="vi">Liên Hệ</span>
+    </h2>
+    <p>
+      <span data-lang="en">
+        Need assistance? Have questions? Reach out to us and we'll be glad to help.
+      </span>
+      <span data-lang="vi">
+        Cần hỗ trợ? Có thắc mắc? Hãy liên hệ với chúng tôi, chúng tôi luôn sẵn sàng giúp đỡ.
+      </span>
+    </p>
+    <ul>
+      <li>
+        <strong>
+          <span data-lang="en">Address:</span>
+          <span data-lang="vi">Địa Chỉ:</span>
+        </strong>
+        <span data-lang="en">1234 Main St, City, State</span>
+        <span data-lang="vi">1234 Đường Chính, Thành Phố, Tỉnh</span>
+      </li>
+      <li>
+        <strong>Phone:</strong> (123) 456-7890
+      </li>
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:info@truclanmotel.com">info@truclanmotel.com</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      <span data-lang="en">© 2025 Truc Lan Motel. All rights reserved.</span>
+      <span data-lang="vi">© 2025 Nhà Nghỉ Trúc Lan. Mọi quyền được bảo lưu.</span>
+    </p>
+  </footer>
+
+</body>
+</html>

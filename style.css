@@ -1,0 +1,172 @@
+/* General Reset / Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Header & Navigation */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 2rem;
+  }
+  
+  /* Use flex to space logo on the left and nav + toggle on the right */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* puts logo on one side, nav on the other */
+  }
+  
+  /* The logo can stay as is */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /* Use 'gap' for spacing instead of large margins. 
+       If older browsers are a concern, you can manually margin each <li>. */
+    gap: 1rem;
+    margin: 0; /* remove default list margin */
+    padding: 0; /* remove default list padding */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #666;
+  }
+  
+  /* Language Toggle Button */
+  .lang-toggle {
+    cursor: pointer;
+    border: 1px solid #333;
+    background: #fff;
+    color: #333;
+    /* Smaller padding so it’s not too big */
+    padding: 0.3rem 0.6rem;
+    /* Keep any radius or transitions you like */
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    /* Slightly smaller text if you want it to match nav link size */
+    font-size: 0.85rem;
+    /* A small left margin to separate it from the nav links */
+    margin-left: 1rem;
+  }
+  
+  .lang-toggle:hover {
+    background: #eee;
+  }
+  
+  /* Example: You could group the nav links + toggle together 
+     so they’re on the same line without pushing each other. 
+     This next part is optional but can help. */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between nav and the button */
+  }
+  
+  /* If you’re using the same layout as before, ensure the 
+     nav container wraps both the <ul> and the toggle button 
+     so they stay on the same row.
+     Example in HTML:
+     <div class="nav-container">
+       <h1 class="logo"> ... </h1>
+       <div class="nav-right">
+         <ul class="nav-links"> ... </ul>
+         <button class="lang-toggle">...</button>
+       </div>
+     </div>
+  */
+  
+  /* Hero Section */
+  .hero {
+    /* Make the section fill enough vertical space */
+    height: 60vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  
+    /* Replace this path with your actual file/path or URL */
+    background-image: url("images/motel.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-text {
+    background-color: rgba(0,0,0,0.5);
+    padding: 2rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #ffffff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: #f0f0f0;
+  }
+  
+  /* About, Feedback, and Contact Sections */
+  section {
+    padding: 2rem;
+    margin: auto;
+    max-width: 800px;
+  }
+  
+  section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form Container */
+  .form-container {
+    margin-top: 1rem;
+    overflow: auto;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
