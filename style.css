@@ -11,61 +11,60 @@ body {
   color: #333;
 }
 
-/* Header & Navigation */
-.header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 1rem 2rem;
+li, a, button {
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
 }
 
-/* Use flex to space logo on the left and nav + toggle on the right */
-.nav-container {
+/* Header & Navigation */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between; /* puts logo on one side, nav on the other */
+  padding: 30px 10%;
 }
 
 /* The logo can stay as is */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+logo {
+  cursor: pointer;
 }
 
 /* Navigation Links */
-.nav-links {
+.nav_links {
   list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* Use 'gap' for spacing */
-  margin: 0; /* remove default list margin */
-  padding: 0; /* remove default list padding */
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease;
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
 }
 
-.nav-links a:hover {
-  color: #666;
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+  color: black;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
 }
 
 /* Language Toggle Button */
 .lang-toggle {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  border: 1px solid #333;
-  background: #fff;
-  color: #333;
-  padding: 0.3rem 0.6rem; /* Smaller padding so it’s not too big */
-  border-radius: 4px;
-  transition: background 0.3s ease;
-  font-size: 0.85rem; /* Slightly smaller text */
-  margin-left: 1rem; /* Small left margin to separate from nav links */
+  transition: all 0.3s ease 0s;
 }
 
 .lang-toggle:hover {
-  background: #eee;
+  background-color: rgba(0, 136, 169, 0.8);
 }
 
 /* Group nav links + toggle together */
@@ -189,5 +188,79 @@ section p {
   .form-container iframe {
     /* Increase height if needed, or you can use auto if the form adjusts */
     height: 1000px;
+  }
+}
+
+/* Header & Navigation */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+/* The logo can stay as is */
+logo {
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+
+/* Language Toggle Button */
+.lang-toggle {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Responsive adjustments for iPhone 14 Pro Max and similar devices */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav_links {
+    margin-top: 10px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .nav_links li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .lang-toggle {
+    margin: 15px 0 0;
+    padding: 8px 20px;
   }
 }
