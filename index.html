@@ -1,174 +1,187 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Truc Lan Motel</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhà Nghỉ Trúc Lan – Hưng Thịnh, Trảng Bom, Đồng Nai | 0971 955 211</title>
+<meta name="description" content="Nhà Nghỉ Trúc Lan tại Hưng Thịnh, Trảng Bom, Đồng Nai. Phòng sạch sẽ, rộng rãi, thoáng mát, sân đỗ ô tô rộng. Nhận khách nước ngoài. Gọi 0971 955 211.">
+<meta property="og:title" content="Nhà Nghỉ Trúc Lan – Trảng Bom, Đồng Nai">
+<meta property="og:description" content="Phòng sạch, rộng rãi, sân đỗ ô tô 5–7 xe. Đánh giá 4.2★ trên Google. Gọi 0971 955 211.">
+<meta property="og:image" content="images/motel.jpeg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Motel",
+  "name": "Nhà Nghỉ Trúc Lan",
+  "alternateName": "Truc Lan Motel",
+  "image": "images/motel.jpeg",
+  "telephone": "+84971955211",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ấp Hưng Phát, 141B Đường 20",
+    "addressLocality": "Hưng Thịnh, Trảng Bom",
+    "addressRegion": "Đồng Nai",
+    "addressCountry": "VN"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 10.9174797, "longitude": 107.0747543 },
+  "url": "https://kross2710.github.io/",
+  "priceRange": "₫",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.2", "reviewCount": "25" }
+}
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #222; line-height: 1.6; }
+  a { color: #0a6e56; text-decoration: none; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
 
-  <!-- Simple inline script to handle language toggling -->
-  <script>
-    function toggleLanguage() {
-      // We get the current language from the HTML 'lang' attribute:
-      const htmlEl = document.documentElement;
-      const currentLang = htmlEl.getAttribute('lang');
+  header { position: sticky; top: 0; background: #0a6e56; color: #fff; z-index: 10; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; }
+  header .brand { font-weight: 700; font-size: 17px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 24px; font-weight: 600; font-size: 15px; }
+  .btn-call { background: #ffb52e; color: #3d2a00; }
+  .btn-zalo { background: #0068ff; color: #fff; }
+  .btn-line { border: 2px solid #0a6e56; color: #0a6e56; }
+  header .btn-call { padding: 8px 14px; font-size: 14px; }
 
-      // Toggle between 'en' and 'vi'
-      const newLang = (currentLang === 'en') ? 'vi' : 'en';
-      htmlEl.setAttribute('lang', newLang);
+  .hero { position: relative; }
+  .hero img { width: 100%; height: 320px; object-fit: cover; display: block; }
+  .hero-text { padding: 24px 0; }
+  .hero-text h1 { font-size: 26px; line-height: 1.3; }
+  .stars { color: #f5a623; font-size: 18px; }
+  .hero-text .sub { color: #555; margin: 6px 0 16px; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
-      // Show or hide elements based on their data-lang attribute
-      document.querySelectorAll('[data-lang]').forEach(element => {
-        element.style.display = (element.getAttribute('data-lang') === newLang)
-          ? 'block'
-          : 'none';
-      });
-    }
+  section { padding: 28px 0; }
+  section h2 { font-size: 21px; color: #0a6e56; margin-bottom: 14px; }
+  .alt { background: #f2f7f5; }
 
-    // On page load, ensure the correct language is displayed
-    window.addEventListener('DOMContentLoaded', () => {
-      const currentLang = document.documentElement.getAttribute('lang');
-      document.querySelectorAll('[data-lang]').forEach(element => {
-        element.style.display = (element.getAttribute('data-lang') === currentLang)
-          ? 'block'
-          : 'none';
-      });
-    });
-  </script>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: #fff; border: 1px solid #e0e8e5; border-radius: 12px; padding: 14px 16px; }
+  .card b { color: #0a6e56; }
+
+  .price-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+  .price-table th, .price-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e0e8e5; }
+  .price-table th { background: #0a6e56; color: #fff; }
+  .note { font-size: 13.5px; color: #666; margin-top: 8px; }
+
+  blockquote { background: #fff; border-left: 4px solid #0a6e56; padding: 12px 16px; border-radius: 0 10px 10px 0; margin-bottom: 12px; font-size: 15px; }
+  blockquote span { display: block; color: #777; font-size: 13px; margin-top: 6px; }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; }
+
+  .en-box { background: #fffbe9; border: 1px solid #f0dfa0; border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+
+  .contact-list { list-style: none; font-size: 16px; }
+  .contact-list li { margin-bottom: 10px; }
+  iframe.map { width: 100%; height: 320px; border: 0; border-radius: 12px; margin-top: 14px; }
+
+  footer { background: #0a6e56; color: #d8eee8; text-align: center; padding: 18px 16px; font-size: 14px; }
+
+  .float-call { position: fixed; right: 16px; bottom: 16px; z-index: 20; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  @media (max-width: 600px) { .hero img { height: 220px; } .hero-text h1 { font-size: 22px; } }
+</style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-      <!-- Motel Name -->
+<header>
+  <div class="wrap">
+    <div class="brand">Nhà Nghỉ Trúc Lan</div>
+    <a class="btn btn-call" href="tel:+84971955211">📞 0971 955 211</a>
+  </div>
+</header>
 
-      <!-- Navigation -->
-      <nav>
-        <ul class="nav_links">
-          <li><a href="#about">
-            <span data-lang="en">About Us</span>
-            <span data-lang="vi">Giới Thiệu</span>
-          </a></li>
-          <li><a href="#feedback">
-            <span data-lang="en">Feedback</span>
-            <span data-lang="vi">Phản Hồi</span>
-          </a></li>
-          <li><a href="#contact">
-            <span data-lang="en">Contact</span>
-            <span data-lang="vi">Liên Hệ</span>
-          </a></li>
-        </ul>
-      </nav>
+<div class="hero">
+  <img src="images/motel.jpeg" alt="Nhà Nghỉ Trúc Lan – Hưng Thịnh, Trảng Bom, Đồng Nai">
+</div>
 
-      <!-- Language Toggle Button on top-right -->
-      <button class="lang-toggle" onclick="toggleLanguage()">
-        <!-- We'll just show an icon or text; 
-             it will toggle the site language automatically. -->
-        <span data-lang="en">Vi / En</span>
-        <span data-lang="vi">En / Vi</span>
-      </button>
-  </header>
+<div class="wrap hero-text">
+  <h1>Nhà nghỉ sạch sẽ, thoáng mát tại Hưng Thịnh, Trảng Bom</h1>
+  <p class="sub"><span class="stars">★★★★☆</span> <b>4.2/5</b> · 25 đánh giá trên Google Maps</p>
+  <div class="cta-row">
+    <a class="btn btn-call" href="tel:+84971955211">Gọi đặt phòng</a>
+    <a class="btn btn-zalo" href="https://zalo.me/0971955211">Nhắn Zalo</a>
+    <a class="btn btn-line" href="https://maps.app.goo.gl/mjRVx6mEUQjJCFmP9">Chỉ đường</a>
+  </div>
+</div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>
-        <span data-lang="en">Welcome to Truc Lan Motel</span>
-        <span data-lang="vi">Chào Mừng Đến Với Nhà Nghỉ Trúc Lan</span>
-      </h2>
-      <p>
-        <span data-lang="en">Experience comfort and hospitality at its finest.</span>
-        <span data-lang="vi">Trải nghiệm sự thoải mái và hiếu khách tuyệt vời nhất.</span>
-      </p>
-      <a href="#feedback" class="button">
-        <span data-lang="en">Leave Feedback</span>
-        <span data-lang="vi">Để Lại Phản Hồi</span>
-      </a>
+<section class="alt">
+  <div class="wrap">
+    <h2>Vì sao khách chọn Trúc Lan?</h2>
+    <div class="grid">
+      <div class="card"><b>Sạch sẽ</b> — điều khách khen nhiều nhất trong các đánh giá. Chăn ga mới, phòng dọn kỹ mỗi ngày.</div>
+      <div class="card"><b>Rộng rãi, thoáng mát</b> — phòng mới, cửa sổ thoáng, nhà tắm rộng.</div>
+      <div class="card"><b>Sân đỗ xe rộng</b> — thoải mái cho 5–7 ô tô, không lo chỗ đậu.</div>
+      <div class="card"><b>Nhận khách nước ngoài</b> — chỉ cần hộ chiếu, hỗ trợ khai báo tạm trú.</div>
+      <div class="card"><b>Nước uống miễn phí</b> — tặng nước suối mát lạnh khi nhận phòng.</div>
+      <div class="card"><b>Giá bình dân</b> — giá hợp lý so với tiện nghi, ưu đãi khách ở dài ngày.</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About Us Section -->
-  <section id="about" class="about-section">
-    <h2>
-      <span data-lang="en">About Us</span>
-      <span data-lang="vi">Giới Thiệu</span>
-    </h2>
-    <p>
-      <span data-lang="en">
-        Truc Lan Motel is your home away from home. We pride ourselves on warm hospitality
-        and a cozy stay for all of our guests.
-      </span>
-      <span data-lang="vi">
-        Nhà Nghỉ Trúc Lan là ngôi nhà thứ hai của bạn. Chúng tôi tự hào về lòng hiếu khách
-        và một không gian ấm cúng cho tất cả khách hàng.
-      </span>
-    </p>
-  </section>
+<section>
+  <div class="wrap">
+    <h2>Bảng giá phòng</h2>
+    <!-- SỬA GIÁ TẠI ĐÂY: thay chữ "Gọi để báo giá" bằng giá thật, ví dụ: 120.000đ -->
+    <table class="price-table">
+      <tr><th>Loại</th><th>Giá</th></tr>
+      <tr><td>Nghỉ theo giờ</td><td><a href="tel:+84971955211">Gọi để báo giá</a></td></tr>
+      <tr><td>Nghỉ qua đêm</td><td><a href="tel:+84971955211">Gọi để báo giá</a></td></tr>
+      <tr><td>Thuê tháng / dài ngày</td><td><a href="tel:+84971955211">Gọi để báo giá</a></td></tr>
+    </table>
+    <p class="note">Gọi hoặc nhắn Zalo <b>0971 955 211</b> để giữ phòng trước khi đến.</p>
+  </div>
+</section>
 
-  <!-- Feedback Section with Google Form -->
-  <section id="feedback" class="feedback-section">
-    <h2>
-      <span data-lang="en">Guest Feedback</span>
-      <span data-lang="vi">Phản Hồi Của Khách Hàng</span>
-    </h2>
-    <p>
-      <span data-lang="en">
-        We value your feedback. Please fill out the form below to let us know about your stay!
-      </span>
-      <span data-lang="vi">
-        Chúng tôi trân trọng ý kiến đóng góp của bạn. Hãy điền biểu mẫu dưới đây để chia sẻ về trải nghiệm của mình!
-      </span>
-    </p>
-    
-    <!-- Embed your Google Form here by replacing the 'src' with your actual form link -->
-    <div class="form-container">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSekIONPc9SlmdfMIyQCDyx9XSMaP0BqQbDJuI90ZQb5y0ZLjg/viewform?usp=dialog"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0">
-        Loading…
-      </iframe>
+<section class="alt">
+  <div class="wrap">
+    <h2>Khách nói gì về Trúc Lan</h2>
+    <blockquote>“Nhà nghỉ rộng rãi thoáng mát, phòng ốc sạch sẽ đầy đủ tiện nghi, sân bãi rộng không lo chỗ đậu xe. Lần sau có dịp ghé khu vực này mình sẽ quay lại.”<span>— Anie Nguyễn, đánh giá 5★ trên Google</span></blockquote>
+    <blockquote>“Phòng mới, nhà tắm to, chăn ga mới tinh. Quan trọng nhất là giá rẻ so với tiện nghi, sân đậu được 5–7 chiếc ô tô. Còn được tặng 2 chai nước suối mát lạnh!”<span>— Phi Trường Nguyễn, đánh giá 5★ trên Google</span></blockquote>
+    <p><a href="https://maps.app.goo.gl/mjRVx6mEUQjJCFmP9">Xem tất cả 25 đánh giá trên Google Maps →</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Hình ảnh</h2>
+    <div class="gallery">
+      <img src="images/motel.jpeg" alt="Mặt tiền Nhà Nghỉ Trúc Lan">
+      <!-- THÊM ẢNH: tải ảnh lên thư mục images rồi bỏ dấu chú thích các dòng dưới
+      <img src="images/phong.jpeg" alt="Phòng ngủ sạch sẽ">
+      <img src="images/nhatam.jpeg" alt="Nhà tắm rộng rãi">
+      <img src="images/san.jpeg" alt="Sân đỗ ô tô rộng">
+      -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>
-      <span data-lang="en">Contact Us</span>
-      <span data-lang="vi">Liên Hệ</span>
-    </h2>
-    <p>
-      <span data-lang="en">
-        Need assistance? Have questions? Reach out to us and we'll be glad to help.
-      </span>
-      <span data-lang="vi">
-        Cần hỗ trợ? Có thắc mắc? Hãy liên hệ với chúng tôi, chúng tôi luôn sẵn sàng giúp đỡ.
-      </span>
-    </p>
-    <ul>
-      <li>
-        <strong>
-          <span data-lang="en">Address:</span>
-          <span data-lang="vi">Địa Chỉ:</span>
-        </strong>
-        <span>Ấp Hưng Phát/141B Đ. 20, Hưng Thịnh, Trảng Bom, Đồng Nai, Vietnam</span>      </li>
-      <li>
-        <strong>Phone:</strong> 0988316281
-      </li>
+<section class="alt">
+  <div class="wrap">
+    <div class="en-box">
+      <b>For foreign guests:</b> We welcome international visitors. Please bring your passport for check-in (required for temporary residence registration). Call or text us at <a href="tel:+84971955211">+84 971 955 211</a>.
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Liên hệ & chỉ đường</h2>
+    <ul class="contact-list">
+      <li>📍 Ấp Hưng Phát, 141B Đường 20, Hưng Thịnh, Trảng Bom, Đồng Nai</li>
+      <li>📞 <a href="tel:+84971955211"><b>0971 955 211</b></a> (bấm để gọi)</li>
+      <li>💬 <a href="https://zalo.me/0971955211">Nhắn tin Zalo</a></li>
+      <li>📝 <a href="https://docs.google.com/forms/d/e/1FAIpQLSekIONPc9SlmdfMIyQCDyx9XSMaP0BqQbDJuI90ZQb5y0ZLjg/viewform?usp=dialog">Gửi góp ý cho nhà nghỉ</a></li>
     </ul>
-  </section>
+    <iframe class="map" loading="lazy" title="Bản đồ Nhà Nghỉ Trúc Lan"
+      src="https://www.google.com/maps?q=Truc+Lan+Motel+H%C6%B0ng+Th%E1%BB%8Bnh+%C4%90%E1%BB%93ng+Nai&output=embed"></iframe>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>
-      <span data-lang="en">© 2025 Truc Lan Motel. All rights reserved.</span>
-      <span data-lang="vi">© 2025 Nhà Nghỉ Trúc Lan. Mọi quyền được bảo lưu.</span>
-    </p>
-  </footer>
+<footer>© 2026 Nhà Nghỉ Trúc Lan · Truc Lan Motel — Hưng Thịnh, Trảng Bom, Đồng Nai</footer>
+
+<a class="btn btn-call float-call" href="tel:+84971955211">📞 Gọi ngay</a>
 
 </body>
 </html>
