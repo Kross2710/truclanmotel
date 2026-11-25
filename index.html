@@ -6,16 +6,17 @@
 <title>Nhà Nghỉ Trúc Lan – Hưng Thịnh, Trảng Bom, Đồng Nai | 0971 955 211</title>
 <meta name="description" content="Nhà Nghỉ Trúc Lan tại Hưng Thịnh, Trảng Bom, Đồng Nai. Phòng sạch sẽ, rộng rãi, thoáng mát, sân đỗ ô tô rộng. Nhận khách nước ngoài. Gọi 0971 955 211.">
 <meta name="theme-color" content="#0a6e56">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:title" content="Nhà Nghỉ Trúc Lan – Trảng Bom, Đồng Nai">
 <meta property="og:description" content="Phòng sạch, rộng rãi, sân đỗ ô tô 5–7 xe. Đánh giá 4.2★ trên Google. Gọi 0971 955 211.">
-<meta property="og:image" content="images/motel.jpeg">
+<meta property="og:image" content="https://nhanghitruclan.id.vn/images/motel.jpeg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Motel",
   "name": "Nhà Nghỉ Trúc Lan",
   "alternateName": "Truc Lan Motel",
-  "image": "images/motel.jpeg",
+  "image": "https://nhanghitruclan.id.vn/images/motel.jpeg",
   "telephone": "+84971955211",
   "address": {
     "@type": "PostalAddress",
@@ -25,7 +26,7 @@
     "addressCountry": "VN"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 10.9174797, "longitude": 107.0747543 },
-  "url": "https://kross2710.github.io/",
+  "url": "https://nhanghitruclan.id.vn",
   "priceRange": "₫",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.2", "reviewCount": "25" }
 }
@@ -91,7 +92,27 @@
     border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(4px);
     padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; margin-bottom: 16px;
   }
-  .badge .stars { color: var(--amber); letter-spacing: 1px; }
+  .badge .stars {
+    position: relative;
+    display: inline-block;
+    width: 5.4em;
+    height: 1em;
+    line-height: 1em;
+  }
+  .badge .stars::before,
+  .badge .stars::after {
+    content: "★★★★★";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .badge .stars::before {
+    color: #d8e3de;
+  }
+  .badge .stars::after {
+    color: var(--amber);
+    clip-path: inset(0 calc(100% - var(--rating, 5) * 20%) 0 0);
+  }
   .hero-inner h1 { font-size: 38px; line-height: 1.2; font-weight: 800; letter-spacing: -.5px; max-width: 18ch; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
   .hero-inner .sub { margin: 12px 0 22px; font-size: 17px; color: #e7f1ed; max-width: 46ch; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
   .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -205,7 +226,7 @@
     <img src="images/motel.jpeg" alt="Nhà Nghỉ Trúc Lan – Hưng Thịnh, Trảng Bom, Đồng Nai" width="768" height="733" fetchpriority="high">
   </picture>
   <div class="wrap hero-inner">
-    <span class="badge"><span class="stars">★★★★☆</span> 4.2/5 · 25 đánh giá Google</span>
+    <span class="badge"><span class="stars" role="img" style="--rating:4.2" aria-label="4.2 trên 5 sao"></span> 4.2/5 · 25 đánh giá Google</span>
     <h1>Nhà nghỉ sạch sẽ, thoáng mát tại Hưng Thịnh, Trảng Bom</h1>
     <p class="sub">Phòng mới, rộng rãi, sân đỗ ô tô thoải mái cho 5–7 xe. Nhận cả khách nước ngoài.</p>
     <div class="cta-row">
